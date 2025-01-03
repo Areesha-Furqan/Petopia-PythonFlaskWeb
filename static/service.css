@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+* {
+    text-decoration: none;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgb(121, 17, 219);   
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 6px;
+}
+
+.navdiv {
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navlogo {
+    position: relative;
+    font-size: 20px;
+}
+
+.nav-links {
+    position: relative;
+    li {
+        list-style: none;
+        display: inline;
+        a {
+            font-weight: bold;
+            color: white;
+            font-family: cursive;
+            margin-right: 19px;
+        }
+    }
+}
+
+* p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+* h2{
+    margin-left: 20px;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.imag {
+    margin: 7px;
+    width: 400px;
+    float: left;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.image {
+    margin: 7px;
+    width: 450px;
+    float: right;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.mr {
+    margin: 15px;
+}
+
+.button {
+    margin: 20px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.button:hover{
+    opacity: .7;
+}

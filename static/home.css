@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+   
+}
+
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+
+.navbar {
+    /* position: sticky; */
+    width: 100%;
+    top: 0;
+    background: rgb(121, 17, 219);   
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+}
+
+
+
+.navdiv {
+    /* position: relative; */
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.navlogo {
+    /* position: relative; */
+    font-size: 20px;
+}
+
+.nav-links {
+    /* position: relative; */
+    li {
+        list-style: none;
+        display: inline;
+        a {
+            font-weight: bold;
+            color: white;
+            font-family: cursive;
+            margin-right: 19px;
+        }
+    }
+}
+
+* h2 {
+    margin-left: 20px;
+}
+
+* p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* img background */
+
+.background_img{
+    background-image: url("./img/background.jpg");
+    height: 300px;
+    width: 70%;
+    margin: 0 auto;
+    color: white;
+    padding: 50px 0 50px 50px;
+}
+
+.btn1 {
+    border-radius: 15px;
+    padding: 10px;
+    transition: .3s;
+}
+
+.btn1:hover {
+    opacity: .7;
+}
+
+/* 
+../ back 
+./ to check current folder
+/ to get into the folder
+*/

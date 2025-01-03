@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petopia &#128062;</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='login.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="navlogo">
+                <a href="#" style="color: white;"><big><big style="font-family: cursive;">Petopia&#128062;</big></big></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{'/'}}"> Home </a></li>
+                <li><a href="{{'about'}}"> About </a></li>
+                <li><a href="{{'service'}}"> Services </a></li>
+                <li><a href="{{'gallery'}}"> Gallery </a></li>
+                <li><a href="{{'login'}}"> Login </a></li>
+                <li><a href="{{'reg'}}"> Sign up </a></li>
+                <li><a href="{{'contact'}}"> Contact </a></li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br>
+    <main>
+        <div class="container">
+            <form action="">
+                <h1><big>Login&#128062;</big></h1>
+                <div class="form-grp">
+                    <label for="">Username or Email:</label>
+                    <input class="form-cntrl" type="text" placeholder="Enter">
+
+                </div>
+                <div class="form-grp">
+                    <label for="">Password</label>
+                    <input class="form-cntrl" type="password" placeholder="Enter">
+                </div>
+                <input class="button" type="submit" value="Login">
+                <p class="align2"
+                    style="color: rgb(150, 30, 78); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                    Not have an account?</p><button class="btn"><a href="{{'reg'}}"
+                        style="color: rgb(255, 255, 255); width: 10px;">Sign up</a></button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <section style="background-color: rgb(75, 0, 132); font-family: cursive;">
+            <br>
+            <h2 style="color: white;">Resources</h2>
+            <ul>
+                <li style="color: rgb(123, 37, 189);"><a href="{{'contact'}}" style="color: white;"> FAQS </a></li>
+                <br>
+                <li style="color: rgb(123, 37, 189);"><a href="{{'gallery'}}" style="color: white;"> Available Pets </a>
+                </li>
+                <br>
+                <li style="color: rgb(123, 37, 189);"><a href="{{'login'}}" style="color: white;"> Adoption Process </a>
+                </li>
+                <br>
+                <li style="color: rgb(123, 37, 189);"><a href="{{'service'}}" style="color: white;"> Our Services </a>
+                </li>
+            </ul>
+            <br>
+        </section>
+    </footer>
+</body>
+
+</html>
