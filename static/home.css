@@ -12,7 +12,7 @@ body {
 
 
 .navbar {
-    /* position: sticky; */
+    position: sticky;
     width: 100%;
     top: 0;
     background: rgb(121, 17, 219);   
@@ -25,7 +25,7 @@ body {
 
 
 .navdiv {
-    /* position: relative; */
+    position: relative;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -33,12 +33,12 @@ body {
 }
 
 .navlogo {
-    /* position: relative; */
+    position: relative;
     font-size: 20px;
 }
 
 .nav-links {
-    /* position: relative; */
+    position: relative;
     li {
         list-style: none;
         display: inline;
