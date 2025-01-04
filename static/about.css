@@ -46,7 +46,6 @@ body {
 }
 
 .banner {
-    width: ;
     text-align: center;
     padding: 30px;
     font-size: 20px;
@@ -70,9 +69,6 @@ body {
     margin: 0  auto ;
     padding: 30px ;
     font-size: 20px;
-    p {
-        
-    }
 }
 
 .grid2 {
