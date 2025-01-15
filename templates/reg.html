@@ -13,41 +13,55 @@
                 <a href="#" style="color: white;"><big><big style="font-family: cursive;">Petopia&#128062;</big></big></a>
             </div>
             <ul class="nav-links">
-                <li><a href="{{'/'}}"> Home </a></li>
+                <li><a href="{{'home'}}"> Home </a></li>
                 <li><a href="{{'about'}}"> About </a></li>
                 <li><a href="{{'service'}}"> Services </a></li>
                 <li><a href="{{'gallery'}}"> Gallery </a></li>
-                <li><a href="{{'login'}}"> Login </a></li>
+                <li><a href="{{'/'}}"> Login </a></li>
                 <li><a href="{{'reg'}}"> Sign up </a></li>
                 <li><a href="{{'contact'}}"> Contact </a></li>
             </ul>
         </div>
     </nav>
     <main>
-        <div class="container" >
-            <form action="">
+        <div class="container">
+            <form method="post" action="{{ url_for('reg') }}">
                 <h1><big>Sign Up&#128062;</big></h1>
                 <h3><big>To get your desirable Pet</big></h3>
+    
+                <!-- Display error message -->
+                {% if error %}
+                    <p style="color: red; font-weight: bold;">{{ error }}</p>
+                {% endif %}
+    
+                <!-- First Name -->
                 <div class="form-grp">
-                    <label for="">First Name:</label>
-                    <input class="form-cntrl" type="text" placeholder="Enter">
+                    <label for="first_name">First Name:</label>
+                    <input id="first_name" class="form-cntrl" type="text" name="first_name" placeholder="Enter" required>
                 </div>
+    
+                <!-- Last Name -->
                 <div class="form-grp">
-                    <label for="">Last Name</label>
-                    <input class="form-cntrl" type="text" placeholder="Enter">
+                    <label for="last_name">Last Name:</label>
+                    <input id="last_name" class="form-cntrl" type="text" name="last_name" placeholder="Enter" required>
                 </div>
+                <!-- Email -->
                 <div class="form-grp">
-                    <label for="">Email:</label>
-                    <input class="form-cntrl" type="email" placeholder="@gmail.com">
+                    <label for="email">Email:</label>
+                    <input id="email" class="form-cntrl" type="email" name="email" placeholder="@gmail.com" required>
                 </div>
+    
+                <!-- Password -->
                 <div class="form-grp">
-                    <label for="">Create new password:</label>
-                    <input class="form-cntrl" type="password" placeholder="Password">
+                    <label for="password">Create New Password:</label>
+                    <input id="password" class="form-cntrl" type="password" name="password" placeholder="Password" required>
                 </div>
-                <button class="button"><a href="{{'login'}}" style="color: white;"> Sign Up </a></button>
+    
+                <!-- Submit Button -->
+                <button class="button" type="submit" style="color: white;">Sign Up</button>
             </form>
         </div>
-    </main>
+    </main>    
     <footer>
         <section style="background-color: rgb(75, 0, 132); font-family: cursive;">
             <br><h2 style="color: white;">Resources</h2>

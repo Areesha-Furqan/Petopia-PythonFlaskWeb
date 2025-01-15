@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="{{url_for('static',filename='login.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
 
+    <script>
+        // Function to show the flash message in a pop-up
+        function showAlert(message) {
+            alert(message);
+        }
+    </script>
+
 </head>
 <body>
     <nav class="navbar">
@@ -15,11 +22,11 @@
                 <a href="#" style="color: white;"><big><big style="font-family: cursive;">Petopia&#128062;</big></big></a>
             </div>
             <ul class="nav-links">
-                <li><a href="{{'/'}}"> Home </a></li>
+                <li><a href="{{'home'}}"> Home </a></li>
                 <li><a href="{{'about'}}"> About </a></li>
                 <li><a href="{{'service'}}"> Services </a></li>
                 <li><a href="{{'gallery'}}"> Gallery </a></li>
-                <li><a href="{{'login'}}"> Login </a></li>
+                <li><a href="{{'/'}}"> Login </a></li>
                 <li><a href="{{'reg'}}"> Sign up </a></li>
                 <li><a href="{{'contact'}}"> Contact </a></li>
             </ul>
@@ -27,25 +34,36 @@
     </nav>
     <main>
         <div class="container">
-            <form action="">
+            <form method="post" action="{{ url_for('login') }}">
                 <h1><big>Login&#128062;</big></h1>
+    
+                <!-- Display error message -->
+                {% if error %}
+                    <p style="color: red; font-weight: bold;">{{ error }}</p>
+                {% endif %}
+    
+                <!-- Email input -->
                 <div class="form-grp">
-                    <label for="">Username or Email:</label>
-                    <input class="form-cntrl" type="text" placeholder="Enter">
+                    <label for="email">Email:</label>
+                    <input class="form-cntrl" type="email" name="email" placeholder="Enter Email" required>
+                </div>
+    
+                <!-- Password input -->
+                <div class="form-grp">
+                    <label for="password">Password:</label>
+                    <input class="form-cntrl" type="password" name="password" placeholder="Enter password" required>
+                </div>
 
-                </div>
-                <div class="form-grp">
-                    <label for="">Password</label>
-                    <input class="form-cntrl" type="password" placeholder="Enter">
-                </div>
+                <!-- Submit button -->
                 <input class="button" type="submit" value="Login">
-                <p class="align2"
-                    style="color: rgb(150, 30, 78); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                    Not have an account?</p><button class="btn"><a href="{{'reg'}}"
-                        style="color: rgb(255, 255, 255); width: 10px;">Sign up</a></button>
+
+                <p class="align2" style="color: rgb(150, 30, 78); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                    Don't have an account?</p>
+                <button class="btn"><a href="{{ url_for('reg') }}" style="color: rgb(255, 255, 255);">Sign up</a></button>
             </form>
+            
         </div>
-    </main>
+    </main>    
     <footer>
         <section style="background-color: rgb(75, 0, 132); font-family: cursive;">
             <br>

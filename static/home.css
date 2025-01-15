@@ -15,7 +15,7 @@ body {
     position: sticky;
     width: 100%;
     top: 0;
-    background: rgb(121, 17, 219);   
+    background: rgb(75, 0, 132);   
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 6px;
@@ -66,10 +66,22 @@ body {
     padding: 5px;
 }
 
-.row::after {
-    content: "";
-    display: table;
-    clear: both;
+.row {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.home_multi_img{
+    width: 24%;
+    height: 270px;
+}
+
+.row2{
+    display: flex;
+justify-content: space-evenly;
+padding: 10px 000;
+
 }
 
 .row::after {

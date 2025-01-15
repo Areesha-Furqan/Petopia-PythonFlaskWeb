@@ -68,3 +68,10 @@ body {
     border-radius: 20px;
     box-shadow: 0 32px 70px rgb(255, 255, 255);
 }
+
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }

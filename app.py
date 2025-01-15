@@ -1,7 +1,12 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
+
 app = Flask(__name__)
 
-@app.route('/')
+# Dummy users data
+users = {}
+user={}
+
+@app.route('/home')
 def home():
     return render_template('home.html')
 
@@ -17,17 +22,47 @@ def service():
 def gallery():
     return render_template('gallery.html')
 
-@app.route('/login')
+@app.route('/', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
 
-@app.route('/reg')
+        # Check if the user exists and the password matches
+        if email in users and users[email] == password:
+            return redirect(url_for('home'))  # Redirect to the home page
+        else:
+            error_message = "Invalid email or password, please try again."
+            return render_template('login.html', error=error_message)  # Pass error message to the template
+    
+    return render_template('login.html')  # Render login page on GET request
+
+@app.route('/reg', methods=['GET', 'POST'])
 def reg():
-    return render_template('reg.html')
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        
+        # Check if the email already exists
+        if email in users:
+            error_message = "Email already in use. Please try a different one."
+            return render_template('reg.html', error=error_message)  # Pass error message to the template
+        
+        # Add user to the dictionary
+        users[email] = password
+        success_message = "Registration successful! Please log in."
+        return redirect(url_for('login', success=success_message))  # Redirect to login page with success message
+    
+    return render_template('reg.html')  # Render registration page
 
-@app.route('/contact')
+@app.route('/contact')  # Contact page
 def contact():
     return render_template('contact.html')
+
+@app.route('/welcome')  # Welcome page after successful login
+def welcome():
+    username = request.args.get('username')
+    return f"Welcome, {username}! You are logged in."
 
 if __name__ == '__main__':
     app.run(debug=True)
