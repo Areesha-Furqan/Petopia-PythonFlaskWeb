@@ -30,9 +30,12 @@
                 <h3><big>To get your desirable Pet</big></h3>
     
                 <!-- Display error message -->
-                {% if error %}
-                    <p style="color: red; font-weight: bold;">{{ error }}</p>
-                {% endif %}
+
+                {% if error %} <!-- THIS  CHECK  IF  THERE  IS  ERROR. '%'👈 TO  GIVE  SPECIAL  INSTRUCTION-->
+
+                    <p style="color: red; font-weight: bold;">{{ error }}</p> 
+                    
+                {% endif %} <!-- TO  END  THE  IF  CONDITION  -->
     
                 <!-- First Name -->
                 <div class="form-grp">

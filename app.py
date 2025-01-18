@@ -1,14 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for
 import json
-
+import os
 app = Flask(__name__)
 
 
 
 users = {} # variable initialization
 
-with open('users.json') as json_file:
-    users = json.load(json_file)
+if os.path.exists("users.json"): #to check if the file exists
+    
+    with open('users.json') as json_file:
+        users = json.load(json_file)
+
 print(users)
 
 
@@ -49,28 +52,41 @@ def login():
 
 
 
-@app.route('/reg', methods=['GET', 'POST'])
+#POST:  to  give  the  data  to  the  server
+
+#GET:  to  SHOW  the  data(FORM)  to  the  USER  
+@app.route('/reg', methods=['GET', 'POST']) 
+
 def reg():
-    if request.method == 'POST':
+    if request.method == 'POST': #TO  CHECK  IF  THE  DATA  IS  SUBMITTED  BY  THE  USER
         email = request.form['email']
         password = request.form['password']
         
-        # Check if the email already exists
+        
+        #CHECKING  IF  THE  EMAIL  IS  ALREADY  EXITS
         if email in users:
             error_message = "Email already in use. Please try a different one."
+            
             return render_template('reg.html', error=error_message)  # Pass error message to the template
         
+        
         # Add user to the dictionary
-        users[email] = password
-        success_message = "Registration successful! Please log in."
-        print(" 54 users", users)
-        with open('users.json', 'w') as json_file:
-            json.dump(users, json_file, indent=4)            
+        
+        users[email] = password # TO  SAVE  THE  VALUE  IN  THE  KEY  OF  DICTIONARY
+        
+        
+        #To  save  the  email  and  password  in  file(user.json) 
+        with open('users.json', 'w') as json_file: # 'with'  TO  CLOSE  FILE  AUTOMATICALLY
+                    
+            json.dump(users, json_file, indent=4) # 'as json_file'  MEANS  'json_file='
+                    #👆get data (users) to send it in object(json_file)
+                        
+            #👆DUMP is a function that takes Python data (like lists, dictionaries, etc.) and writes it to a file in JSON format.
 
-        return redirect(url_for('login', success=success_message))  # Redirect to login page with success message
-    
-    
+        return redirect(url_for('login'))  # GET  THE  LOGIN  PAGE
     return render_template('reg.html')  # Render registration page
+
+
 
 
 
