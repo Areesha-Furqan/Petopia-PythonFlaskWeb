@@ -76,12 +76,12 @@
             function sendAdoptionRequest() {
                 // Show popup message after a minor delay (2 seconds)
                 setTimeout(function() {
-                    document.getElementById("popup").style.display = "block";
+                    document.getElementById("popup").style.display = "block"; // Show the popup
                     setTimeout(function() {
-                        document.getElementById("popup").style.display = "none";
-                    }, 3000); // Hide the popup after 3 seconds
-                }, 2000); // 2 seconds delay
+                        document.getElementById("popup").style.display = "none"; // Hide the popup after 3 seconds
+                    }, 4000); // 4000 milliseconds = 3 seconds
+                }, 1000); // 1000 milliseconds = 2 seconds delay before showing the popup
             }
         </script>
 </body>
-</html>
+</html

@@ -8,12 +8,12 @@ app = Flask(__name__)
 
 users = {} # variable initialization
 
-if os.path.exists("users.json"): #to check if the file exists
+if os.path.exists("users.json"): #  TO  CHECK  FILE  EXIST ????
     
-    with open('users.json') as json_file:
-        users = json.load(json_file)
+    with open('users.json') as json_file: #   'with'  TO  CLOSE  FILE
+        users = json.load(json_file) # USER  FILE  CONTENT -> CONVERT IN  PYTHON  FORMAT -> AND  SAVE
 
-print(users)
+print(users) # TO  SHOW  IN  TERMINAL  
 
 
 
@@ -41,18 +41,18 @@ def adp():
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
+    if request.method == 'POST': # USER  GIVES  INPUT (DATA) ???
         email = request.form['email']
         password = request.form['password']
 
-        # Check if the user exists and the password matches
+        # CHECK  EMAIL  EXIST ???  PASWORD  MATCHES ???
         if email in users and users[email] == password:
-            return redirect(url_for('home'))  # Redirect to the home page
+            return redirect(url_for('home'))  # IF  HAVE -> GO  TO  HOME
         else:
             error_message = "Invalid email or password, please try again."
-            return render_template('login.html', error=error_message)  # Pass error message to the template
+            return render_template('login.html', error=error_message) #
     
-    return render_template('login.html')  # Render login page on GET request
+    return render_template('login.html')
 
 
 
@@ -75,16 +75,16 @@ def reg():
             return render_template('reg.html', error=error_message)  # Pass error message to the template
         
         
-        # Add user to the dictionary
+        # TO ADD THE USER'S EMAIL & PASSWORD  IN  DICT
         
         users[email] = password # TO  SAVE  THE  VALUE  IN  THE  KEY  OF  DICTIONARY
         
         
-        #To  save  the  email  and  password  in  file(user.json) 
+        #SAVING  the  email  and  password  in  file(user.json) 
         with open('users.json', 'w') as json_file: # 'with'  TO  CLOSE  FILE  AUTOMATICALLY
                     
             json.dump(users, json_file, indent=4) # 'as json_file'  MEANS  'json_file='
-                    #👆get data (users) to send it in object(json_file)
+                    #👆 GET DATA (FROM users) to send it in OBJECT ( json_file )
                         
             #👆DUMP is a function that takes Python data (like lists, dictionaries, etc.) and writes it to a file in JSON format.
 
