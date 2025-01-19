@@ -10,7 +10,6 @@ body {
 }
 
 
-
 .navbar {
     position: sticky;
     width: 100%;
@@ -19,17 +18,13 @@ body {
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 6px;
-    padding-top: 6px;
 }
-
-
 
 .navdiv {
     position: relative;
     align-items: center;
     display: flex;
     justify-content: space-between;
-    
 }
 
 .navlogo {
@@ -50,6 +45,7 @@ body {
         }
     }
 }
+
 
 * h2 {
     margin-left: 20px;

@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import json
 import os
+
 app = Flask(__name__)
 
 
@@ -31,6 +32,10 @@ def service():
 @app.route('/gallery')
 def gallery():
     return render_template('gallery.html')
+
+@app.route('/adp')
+def adp():
+    return render_template('adp.html')
 
 
 
@@ -95,10 +100,7 @@ def reg():
 def contact():
     return render_template('contact.html')
 
-@app.route('/welcome')  # Welcome page after successful login
-def welcome():
-    username = request.args.get('username')
-    return f"Welcome, {username}! You are logged in."
+
 
 if __name__ == '__main__':
     app.run(debug=True)
