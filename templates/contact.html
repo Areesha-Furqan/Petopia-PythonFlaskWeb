@@ -31,7 +31,6 @@
                 <div class="form-grp">
                     <label for="">Your Name:*</label>
                     <input class="form-cntrl" type="text" placeholder="Enter">
-
                 </div>
                 <div class="form-grp">
                     <label for="">Your Email:*</label>
@@ -49,7 +48,7 @@
                     <label for="">Message For Us:*</label>
                     <textarea class="form-cntrol" id="Message" rows="6" placeholder="Type a message here"></textarea>
                 </div>
-                <input class="button" type="submit" value="submit">
+                <button class="button" onclick="sendAdoptionRequest()">Submit</button>
             </form>
         </div>
         <br><br>
@@ -69,6 +68,29 @@
             <br>
         </section>
     </footer>
+    
+    <!-- Popup Message this is -->
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <p>Your message has been sent successfully! 🐾</p>
+        </div>
+    </div>
+
+    <script>
+        function sendAdoptionRequest() {
+            // Show popup message immediately upon clicking submit button
+            document.getElementById("popup").style.display = "block";
+            setTimeout(function() {
+                    document.getElementById("popup").style.display = "block"; // Show the popup
+                    setTimeout(function() {
+                        document.getElementById("popup").style.display = "none"; // Hide the popup after 3 seconds
+                    }, 3000); // 4000 milliseconds = 3 seconds
+                }, 1000);
+            // Prevent form submission
+            event.preventDefault(); 
+        }
+    </script>
+
     <script src="//code.tidio.co/2iozv9miewzlzu4fxxfolizku6mgk3p4.js" async></script>
 </body>
 </html>
