@@ -57,6 +57,12 @@ body {
     margin-left: 20px;
 }
 
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 000;
+}
+
 .row::after {
     content: "";
     display: table;
