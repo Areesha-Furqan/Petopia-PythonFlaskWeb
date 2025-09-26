@@ -21,12 +21,12 @@ Follow these steps to run the project on your computer:
    ```bash
    git clone https://github.com/your-username/Petopia-FlaskApp.git
    cd Petopia-FlaskApp
-
-2. pip install flask
-3. python app.py
-4. http://127.0.0.1:5000 (Open in your browser)
+   pip install flask
+   python app.py
+   http://127.0.0.1:5000
 
 ## 📸 Screenshots
 ![Homepage Screenshot](<img width="947" height="478" alt="image" src="https://github.com/user-attachments/assets/24d38ff1-e1ee-487e-9d05-b121220f764d" />
 )
+
 
