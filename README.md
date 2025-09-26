@@ -23,10 +23,10 @@ Follow these steps to run the project on your computer:
    cd Petopia-FlaskApp
    pip install flask
    python app.py
-   http://127.0.0.1:5000
+http://127.0.0.1:5000 (Open In Your Browser)
 
 ## 📸 Screenshots
-![Homepage Screenshot](<img width="947" height="478" alt="image" src="https://github.com/user-attachments/assets/24d38ff1-e1ee-487e-9d05-b121220f764d" />
+![Homepage Screenshot](<img width="947" height="478" alt="image" src="https://github.com/user-attachments/assets/43b8bcce-b6d4-4432-be53-5a1e84e36db9" />
 )
 
 
