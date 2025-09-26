@@ -70,14 +70,11 @@ def reg():
         
         #CHECKING  IF  THE  EMAIL  IS  ALREADY  EXITS
         if email in users:
-            error_message = "Email already in use. Please try a different one."
-            
-            return render_template('reg.html', error=error_message)  # Pass error message to the template
-        
-        
+            if password in users: #NOT WORKING ❓❓❓
+                error_message = "Email already in use. Please try a different one."
+                return render_template('reg.html', error=error_message)  # Pass error message to the template
         # TO ADD THE USER'S EMAIL & PASSWORD  IN  DICT
-        
-        users[email] = password # TO  SAVE  THE  VALUE  IN  THE  KEY  OF  DICTIONARY
+        users[email] = password # TO MAKE DICTIONARY
         
         
         #SAVING  the  email  and  password  in  file(user.json) 

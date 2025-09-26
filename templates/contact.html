@@ -61,7 +61,7 @@
                 <br>
                 <li style="color: rgb(123, 37, 189);"><a href="{{'gallery'}}" style="color: white;"> Available Pets </a></li>
                 <br>
-                <li style="color: rgb(123, 37, 189);"><a href="{{'login'}}" style="color: white;"> Adoption Process </a></li>
+                <li style="color: rgb(123, 37, 189);"><a href="{{'/'}}" style="color: white;"> Adoption Process </a></li>
                 <br>
                 <li style="color: rgb(123, 37, 189);"><a href="{{'service'}}" style="color: white;"> Our Services </a></li>
             </ul>
@@ -84,8 +84,8 @@
                     document.getElementById("popup").style.display = "block"; // Show the popup
                     setTimeout(function() {
                         document.getElementById("popup").style.display = "none"; // Hide the popup after 3 seconds
-                    }, 3000); // 4000 milliseconds = 3 seconds
-                }, 1000);
+                    }, 4000); // 4000 milliseconds = 3 seconds
+                }, 800);
             // Prevent form submission
             event.preventDefault(); 
         }
